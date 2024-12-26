@@ -42,26 +42,24 @@ public class MainActivity extends AppCompatActivity {
         Integer result = null;
 
         // ביצוע פעולה בהתאם לכפתור שלחץ
-        switch (view.getId()) {
-            case R.id.btnPlus:
-                result = num1 + num2;
-                break;
-            case R.id.btnMinus:
-                result = num1 - num2;
-                break;
-            case R.id.btnMult:
-                result = num1 * num2;
-                break;
-            case R.id.btnDiv:
-                if (num2 == 0) {
-                    Toast.makeText(this, "Can't divide by 0", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                result = num1 / num2;
-                break;
+        if (view.getId() == R.id.btnPlus) {
+            result = num1 + num2;
+        }
+        if (view.getId() == R.id.btnMinus) {
+            result = num1 - num2;
+        }
+        if (view.getId() == R.id.btnMult) {
+            result = num1 * num2;
+        }
+        if (view.getId() == R.id.btnDiv) {
+            if (num2 == 0) {
+                Toast.makeText(this, "Can't divide by 0", Toast.LENGTH_LONG).show();
+                return;
+            }
+            result = num1 / num2;
         }
 
-        // הצגת התוצאה
+        // הצגת התוצאה (העברתי את זה מחוץ לתנאים)
         if (result != null) {
             tvResult.setText(result.toString());
         }
