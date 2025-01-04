@@ -24,24 +24,24 @@ public class MainActivity extends AppCompatActivity {
         tvResult = findViewById(R.id.tvResult);
     }
 
-    // פונקציה שמטפלת בלחיצה על כל כפתור
+
     public void onBtnClicked(View view) {
         // קבלת הערכים מה-EditText
         String et1Text = et1.getText().toString();
         String et2Text = et2.getText().toString();
 
-        // ודא שיש ערכים בשני השדות
+
         if (et1Text.isEmpty() || et2Text.isEmpty()) {
             Toast.makeText(this, "Please enter both numbers", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // המרת הטקסטים למספרים
+
         Integer num1 = Integer.parseInt(et1Text);
         Integer num2 = Integer.parseInt(et2Text);
         Integer result = null;
 
-        // ביצוע פעולה בהתאם לכפתור שלחץ
+
         if (view.getId() == R.id.btnPlus) {
             result = num1 + num2;
         }
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             result = num1 / num2;
         }
 
-        // הצגת התוצאה (העברתי את זה מחוץ לתנאים)
+
         if (result != null) {
             tvResult.setText(result.toString());
         }
