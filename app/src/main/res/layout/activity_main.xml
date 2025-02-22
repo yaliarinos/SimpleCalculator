@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -14,9 +14,7 @@
         android:layout_marginStart="75dp"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:inputType="numberSigned"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:inputType="numberSigned" />
 
     <EditText
         android:id="@+id/Num2"
@@ -25,10 +23,8 @@
         android:layout_marginEnd="75dp"
         android:ems="10"
         android:inputType="numberSigned"
-        app:layout_constraintBottom_toBottomOf="@+id/Num1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Num1"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_below="@id/Num1"
+        android:layout_alignStart="@id/Num1" />
 
     <Button
         android:id="@+id/btnPlus"
@@ -37,10 +33,8 @@
         android:layout_marginTop="20dp"
         android:text="+"
         android:onClick="onBtnClicked"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Num2" />
+        android:layout_below="@id/Num2"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/btnMinus"
@@ -49,10 +43,8 @@
         android:layout_marginTop="80dp"
         android:text="-"
         android:onClick="onBtnClicked"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Num2" />
+        android:layout_below="@id/btnPlus"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/btnMult"
@@ -61,10 +53,8 @@
         android:layout_marginTop="156dp"
         android:text="X"
         android:onClick="onBtnClicked"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Num2" />
+        android:layout_below="@id/btnMinus"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/btnDiv"
@@ -73,18 +63,37 @@
         android:layout_marginTop="212dp"
         android:text="/"
         android:onClick="onBtnClicked"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Num2" />
+        android:layout_below="@id/btnMult"
+        android:layout_centerHorizontal="true" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
 
     <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text=""
-        app:layout_constraintTop_toBottomOf="@+id/btnDiv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:id="@+id/nameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/mailTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/signIn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mailTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+</RelativeLayout>
